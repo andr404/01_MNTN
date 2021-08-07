@@ -39,7 +39,7 @@
         </div>
     </header>
 
-    <a href="#" class="hero">
+    <a id="go-to-content" href="#" class="hero">
 
         <div class="hero__category">A Hiking guide</div>
         <h1 class="hero__title">Be Prepared For The Mountains And Beyond!</h1>
@@ -140,5 +140,15 @@
     burger.addEventListener('click', () => {
         mobileNav.classList.toggle('mobile-nav__hide');
         burger.classList.toggle('burger__black')
+    });
+
+    const goToContentLink = document.getElementById('go-to-content');
+    goToContentLink.addEventListener('click', event => {
+        event.preventDefault();
+        const firstContentBlock = document.getElementsByClassName('content')[0];
+        firstContentBlock.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        })
     })
 </script>
